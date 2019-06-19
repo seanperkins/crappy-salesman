@@ -1,5 +1,5 @@
-const Server = require('boardgame.io/server').Server
-const game = require('./game/game').game
+const {Server} = require('boardgame.io/server')
+const {game} = require('./game')
 
 const port = 8000
 
