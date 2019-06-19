@@ -1,5 +1,5 @@
 const {Server} = require('boardgame.io/server')
-import game from './game'
+const game = require('./game').default
 
 const port = 8000
 

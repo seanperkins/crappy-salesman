@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 
+const GAME_NAME = 'Crappy'
+
 const LobbyView = (props) => {
   console.log(props)
   const [playerName, setPlayerName] = useState('Lin')
@@ -35,7 +37,7 @@ const LobbyView = (props) => {
         </label>
         <button
           onClick={async () => {
-            let response = await fetch(`http://localhost:8000/games/default/${gameID}`)
+            let response = await fetch(`http://localhost:8000/games/${GAME_NAME}/${gameID}`)
             if (!response.ok) {
               setError(response.statusText)
               return
@@ -44,7 +46,7 @@ const LobbyView = (props) => {
 
             const availableSpots = players.filter((p) => !p.name)
             if (availableSpots.length === 0) setError("cannot join full game")
-            response = await fetch(`http://localhost:8000/games/default/${gameID}/join`, {
+            response = await fetch(`http://localhost:8000/games/${GAME_NAME}/${gameID}/join`, {
               method: 'post',
               headers:{'content-type': 'application/json'},
               body: JSON.stringify({
@@ -80,7 +82,7 @@ const LobbyView = (props) => {
           />
         </label>
         <button onClick={async () => {
-          const response = await fetch('http://localhost:8000/games/default/create', {
+          const response = await fetch(`http://localhost:8000/games/${GAME_NAME}/create`, {
             method: 'post',
             headers:{'content-type': 'application/json'},
             body: JSON.stringify({
@@ -88,7 +90,7 @@ const LobbyView = (props) => {
             })
           })
           const body = await response.json()
-          await fetch(`http://localhost:8000/games/default/${body.gameID}/join`, {
+          await fetch(`http://localhost:8000/games/${GAME_NAME}/${body.gameID}/join`, {
             method: 'post',
             headers:{'content-type': 'application/json'},
             body: JSON.stringify({
