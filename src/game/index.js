@@ -22,26 +22,23 @@ const game = Game({
   },
   flow: {
     startingPhase: 'roleSelection',
-    phases: [
-      {
-        name: 'roleSelection',
+    phases: {
+      roleSelection: {
         // judge is currentPlayer,
         // judge picks a role,
         turnOrder: TurnOrder.DEFAULT, //@todo figure out
         next: 'pickingProduct'
         // Turn is complete after judge picks a role
       },
-      {
-        name: 'pickingProduct',
+      pickingProduct: {
         // selling active players pitch their cards
         next: 'pickWinner',
-        // Turn is complete when everyone has picked their cards
+        // Turn is complete when everyone has picked their cards      }
       },
-      {
-        name: 'pickWinner'
+      pickWinner: {
         // Turn is complete when judge picks a winner
-      }
-    ]
+      } 
+    }
   }
 })
 
