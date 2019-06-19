@@ -1,13 +1,14 @@
-const {Server, lobbyConfig} = require('boardgame.io/server')
-const game = require('./game').default
+const {Server} = require('boardgame.io/server')
+import game from './game'
 
 const port = 8000
 
 const server = Server({
-  games: [game],
-  lobbyConfig
+  games: [game]
 })
 
-server.run(port)
+server.run({ port: 8000, lobbyConfig: {
+  uuid: () => Math.trunc(Math.random()*10000).toString()
+}})
 
 console.log('Server running on port: ' + port)
