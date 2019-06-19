@@ -4,6 +4,7 @@ import roleCards from './roleCards'
 import productCards from './productCards'
 
 const game = Game({
+  name: 'Crappy',
   setup: (ctx) => ({
     currentRole: null,
     currentRoleHand: shuffle(roleCards).slice(0, 8),

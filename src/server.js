@@ -1,5 +1,5 @@
 const {Server, lobbyConfig} = require('boardgame.io/server')
-const game = require('./game')
+const game = require('./game').default
 
 const port = 8000
 

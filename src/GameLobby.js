@@ -1,12 +1,8 @@
 import React from 'react'
-import { Lobby } from 'boardgame.io/react'
-import game from './game'
+import {Lobby} from 'boardgame.io/react'
 
-class BoardClient extends React.Component {
-  render() {
-    return (<div>WORK</div>)
-  }
-}
+import game from './game'
+import Screen from './ui/Screen'
 
 const LobbyView = () => (
   <div>
@@ -16,7 +12,7 @@ const LobbyView = () => (
       lobbyServer={`http://localhost:8000`}
       gameComponents={[{
         game,
-        boardClient: BoardClient
+        boardClient: Screen,
       }]}
     />
   </div>

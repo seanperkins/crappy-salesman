@@ -52,5 +52,6 @@ export default class Screen extends Component {
     if (phase === 'selectWinner' && !this.isJudge) {
       return <ProductSelectionConfirmed {...this.props}/>
     }
+    return <div>Screen</div>
   }
 }
