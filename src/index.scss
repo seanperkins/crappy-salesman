@@ -47,7 +47,7 @@ footer {
   box-shadow: 0px -1px 5px darken($plum, 10%);
 }
 
-button {
+button:not(.select-item) {
   display: inline-block;
   font-weight: 900;
   text-align: center;

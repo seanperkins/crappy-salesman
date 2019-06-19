@@ -20,7 +20,7 @@ export default class RoleSelection extends Component {
           <SelectItem>Chris</SelectItem>
         </section>
         <Footer>
-          <button>Confirm</button>
+          <button>Confirm Persona</button>
         </Footer>
       </React.Fragment>
     )
