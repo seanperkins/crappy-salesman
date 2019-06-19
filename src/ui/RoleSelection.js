@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 
+import SelectItem from './SelectItem'
+import Footer from './Footer'
+
 export default class RoleSelection extends Component {
 
   render() {
@@ -11,19 +14,14 @@ export default class RoleSelection extends Component {
           <p>Choose your persona for the salespeople to sell to</p>
         </header>
         <section className="ui-section">
-          <div className="select-item">
-            <h2>Rick</h2>
-          </div>
-          <div className="select-item is-selected">
-            <h2>Sean</h2>
-          </div>
-          <div className="select-item">
-            <h2>Lin</h2>
-          </div>
-          <div className="select-item">
-            <h2>Chris</h2>
-          </div>
+          <SelectItem>Rick</SelectItem>
+          <SelectItem>Sean</SelectItem>
+          <SelectItem>Lin</SelectItem>
+          <SelectItem>Chris</SelectItem>
         </section>
+        <Footer>
+          <button>Confirm</button>
+        </Footer>
       </React.Fragment>
     )
   }

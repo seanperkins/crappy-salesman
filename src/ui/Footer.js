@@ -5,9 +5,9 @@ export default class SelectItem extends Component {
   render() {
     console.log(this.props)
     return (
-      <div className="select-item">
-        <h2>{this.props.children}</h2>
-      </div>
+      <footer>
+        {this.props.children}
+      </footer>
     )
   }
 }
