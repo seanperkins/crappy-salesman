@@ -1,0 +1,126 @@
+@import-normalize;
+
+$purple: #5e3867;
+$plum: #1f1f42;
+$white: #fff;
+$gold: #ffc94b;
+$blue: #266183;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 100%;
+  background: $blue;
+  color: $white;
+}
+
+header, section {
+  margin: 0;
+  padding: 1em;
+}
+
+header {
+  text-align: center;
+  & p:last-child{
+    margin-bottom: 0;
+  }
+}
+
+body,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-size-adjust: .5;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: 'Rakkas', cursive;
+  letter-spacing: .05em;
+  margin: 0;
+  color: $gold;
+}
+
+.select-item {
+  background: $purple;
+  border: .25em solid $purple;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1em;
+  border-radius: 0;
+  color: $white;
+  margin-bottom: 1em;
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    color: $white;
+  }
+  &.is-selected {
+    border-color: $gold;
+    color: $gold;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/90/Check_mark_23x20_02.svg');
+    background-repeat: no-repeat;
+    background-position: 101% 47%;
+    background-size: contain;
+    background-blend-mode: soft-light;
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+      color: $gold;
+    }
+  }
+}
+
+.ui-section {
+  display: grid;
+  background: $plum;
+  grid-auto-columns: 1;
+  grid-gap: 1em;
+  padding: 2em 1em;
+  .select-item {
+    margin: 0;
+  }
+}
