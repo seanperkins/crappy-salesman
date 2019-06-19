@@ -9,8 +9,8 @@ import './index.scss'
 const ClientWrapper = (props) => {
   console.log(props)
   const {match: {params}} = props
-  if (!params.gameID) return null 
-  
+  if (!params.gameID) return null
+
   return <Client gameID={params.gameID} playerID={params.playerID} />
 }
 

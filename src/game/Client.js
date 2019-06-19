@@ -9,5 +9,5 @@ export default Client({
   multiplayer: {
     server: 'localhost:8000'
   },
-  debug: true,
+  debug: false,
 })

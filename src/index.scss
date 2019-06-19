@@ -19,7 +19,13 @@ body {
   color: $white;
 }
 
-header, section {
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, section, footer {
   margin: 0;
   padding: 1em;
 }
@@ -28,6 +34,38 @@ header {
   text-align: center;
   & p:last-child{
     margin-bottom: 0;
+  }
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  background: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px -1px 5px darken($plum, 10%);
+}
+
+button:not(.select-item) {
+  display: inline-block;
+  font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: $gold;
+  padding: .5em 1.25em;
+  cursor: pointer;
+  user-drag: none;
+  border-radius: .5em;
+  border: .25em solid $gold;
+  flex: 1;
+  &:hover {
+    background-color: darken($gold, 10%);
+
   }
 }
 
@@ -75,6 +113,7 @@ h6,
   border-radius: 0;
   color: $white;
   margin-bottom: 1em;
+  cursor: pointer;
   h1,
   .h1,
   h2,
@@ -88,6 +127,9 @@ h6,
   h6,
   .h6 {
     color: $white;
+  }
+  &:hover {
+    background: darken($purple, 10%);
   }
   &.is-selected {
     border-color: $gold;
@@ -115,9 +157,10 @@ h6,
 }
 
 .ui-section {
+  flex: 1;
   display: grid;
   background: $plum;
-  grid-auto-columns: 1;
+  grid-template-columns: 1fr;
   grid-gap: 1em;
   padding: 2em 1em;
   .select-item {
