@@ -4,6 +4,8 @@ import game from './index'
 export default Client({
   game,
   // ai,
-  multiplayer: {server: 'localhost:8000'},
+  multiplayer: {
+    server: 'localhost:8000'
+  },
   // debug: false,
 })
